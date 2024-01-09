@@ -1,11 +1,16 @@
+cmake_minimum_required(VERSION 3.22)
 project (lib CXX)
 
-# Include header files
-include_directories(include)
 
 # Source files
 file(GLOB_RECURSE  SOURCES source/*.cpp)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 # Create the static library
 add_library(shakhbat_pd_lib STATIC ${SOURCES})
-target_compile_options(shakhbat_pd_lib PUBLIC -std=c++20)
+target_include_directories(shakhbat_pd_lib PUBLIC include)
+
+install(TARGETS shakhbat_pd_lib DESTINATION ${CMAKE_SOURCE_DIR}/package)
+install(DIRECTORY include DESTINATION ${CMAKE_SOURCE_DIR}/package)

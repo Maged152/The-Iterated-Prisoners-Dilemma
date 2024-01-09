@@ -1,10 +1,8 @@
-#include "shakhbat_pd.hpp"
+#include "../include/fun.hpp"
 #include <iostream>
 
-int main()
+void fun()
 {
-    fun();
-    std::cout << " hii\n";
     #if __cplusplus == 202002L
         std::cout << "C++20\n";
     #elif __cplusplus == 201703L
@@ -14,6 +12,7 @@ int main()
     #elif __cplusplus == 201103L
         std::cout << "C++11\n";
     #else
-        std::cout << "C++ standard pre-C++11 or unknown\n";
+        std::cout << "C++  standard pre-C++11 or unknown\n";
     #endif
+    std::cout << "from fun\n";
 }
