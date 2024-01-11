@@ -16,6 +16,15 @@ namespace qlm
         bool forgiveness;
         bool clarity;
     };
+
+    struct PayOff
+    {
+        int cooperate_cooperate = 3;
+        int cooperate_defect = 0;
+        int defect_cooperate = 5;
+        int defect_defect = 1;
+    };
+    
 }
 
 #endif
