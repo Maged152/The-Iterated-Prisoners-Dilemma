@@ -21,9 +21,8 @@ namespace qlm
         virtual Choice Play(const Choice opponent_play) = 0;
 
         public:
-        Strategy(const std::string& name, const std::string& info, const Properties& properties) : name(name), info(info), properties(properties)
-        {}
-
+        Choice FirstPlay();
+        
         void ClearHistory();
         void UpdateHistory(const Choice my_play, const Choice opponent_play);
 

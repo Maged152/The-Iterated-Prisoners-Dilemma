@@ -31,6 +31,12 @@ namespace qlm
         return my_history;
     }
     ///////////////////////////////////////
+     Choice Strategy::FirstPlay()
+     {
+        Choice my_play = properties.niceness ? Choice::COOPERATE : Choice::DEFECT;
+        my_history.push_back(my_play);
+        return my_play;
+     }
     ///////////////////////////////////////
     ///////////////////////////////////////
     ///////////////////////////////////////
