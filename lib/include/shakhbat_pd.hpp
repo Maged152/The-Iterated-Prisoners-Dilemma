@@ -2,6 +2,7 @@
 #define SHAKHBAT_PD
 
 #include "types.hpp"
-#include "strategy.hpp"
+#include "strategies.hpp"
+#include "matches.hpp"
 
 #endif

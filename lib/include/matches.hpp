@@ -42,7 +42,7 @@ namespace qlm
         std::pair<std::string, unsigned int> Winner() const;
         void Print() const;
 
-        friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds = 200,  const PayOff& pay_off = {}); 
+        friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off); 
     };
 
     class TournamentResult

@@ -1,5 +1,5 @@
-#ifndef STRATEGIES
-#define STRATEGIES
+#ifndef STRATEGY
+#define STRATEGY
 
 #include "types.hpp"
 #include <vector>
