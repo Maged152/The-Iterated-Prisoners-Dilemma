@@ -1,7 +1,7 @@
 #ifndef MATCHES
 #define MATCHES
 
-#include "strategies.hpp"
+#include "strategy.hpp"
 #include <utility>
 namespace qlm
 {
@@ -17,7 +17,7 @@ namespace qlm
         unsigned int player_0_score;
         // player 1 info
         std::string player_1;
-        std::vector<Choice> player_0_history;
+        std::vector<Choice> player_1_history;
         unsigned int player_1_score;
 
         public:
@@ -26,11 +26,23 @@ namespace qlm
         {}
 
         public:
-        // setter/getter
+        // getters
+        PayOff GetPayOff() const;
+        unsigned int GetNumRounds() const;
+
+        std::string GetPlayer0() const;
+        std::vector<Choice> GetPlayer0History() const;
+        unsigned int GetPlayer0Score() const;
+
+        std::string GetPlayer1() const;
+        std::vector<Choice> GetPlayer1History() const;
+        unsigned int GetPlayer1Score() const;
 
         public:
         std::pair<std::string, unsigned int> Winner() const;
         void Print() const;
+
+        friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds = 200,  const PayOff& pay_off = {}); 
     };
 
     class TournamentResult

@@ -7,6 +7,7 @@
 
 namespace qlm
 {
+    // base strategy all other Strategies should inherent from it and write its constructor and play function
     class Strategy
     {
         private:
@@ -30,7 +31,6 @@ namespace qlm
 
         std::vector<Choice> GetMyHistory() const;
     };
-    
 }
 
 #endif
