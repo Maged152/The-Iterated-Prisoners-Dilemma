@@ -3,6 +3,6 @@
 
 #include "types.hpp"
 #include "strategies.hpp"
-#include "matches.hpp"
+#include "competition.hpp"
 
 #endif

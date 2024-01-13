@@ -7,10 +7,10 @@
 
 namespace qlm
 {
-    // base strategy all other Strategies should inherent from it and write its constructor and play function
+    // base strategy all other Strategies should inherent from it and write its constructor and Action function
     class Strategy
     {
-        private:
+        protected:
         std::vector<Choice> my_history;
         std::vector<Choice> opponent_history;
 
@@ -19,17 +19,19 @@ namespace qlm
         Properties properties;
 
         public:
-        virtual Choice Play(const Choice opponent_play) = 0;
+        virtual Choice Action(const Choice opponent_play) = 0;
+        virtual Choice FirstAction() = 0;
 
         public:
-        Choice FirstPlay();
-        
         void ClearHistory();
         void UpdateHistory(const Choice my_play, const Choice opponent_play);
 
         void PrintInfo() const;
 
         std::vector<Choice> GetMyHistory() const;
+
+        protected:
+        std::size_t GetRoundNumber() const;
     };
 }
 
