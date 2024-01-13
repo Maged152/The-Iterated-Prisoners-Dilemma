@@ -3,5 +3,7 @@
 
 int main()
 {
+    qlm::TitForTat strategy;
+    strategy.PrintInfo();
     
 }
