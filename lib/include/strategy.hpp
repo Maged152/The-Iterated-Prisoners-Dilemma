@@ -25,7 +25,7 @@ namespace qlm
         public:
         void ClearHistory();
         void UpdateHistory(const Choice my_play, const Choice opponent_play);
-
+        std::string Name() const;
         void PrintInfo() const;
 
         std::vector<Choice> GetMyHistory() const;

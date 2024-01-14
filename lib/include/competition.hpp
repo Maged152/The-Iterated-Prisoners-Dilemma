@@ -22,13 +22,12 @@ namespace qlm
 
         public:
         MatchResult(const std::string& player_0, const std::string& player_1, const PayOff& pay_off = {},  unsigned int num_rounds = 200)
-        : player_0(player_0), player_1(player_1), pay_off(pay_off), num_rounds(num_rounds)
+        : player_0(player_0), player_1(player_1), pay_off(pay_off), num_rounds(num_rounds), player_0_score(0), player_1_score(0)
         {}
 
         public:
         // getters
         PayOff GetPayOff() const;
-        unsigned int GetNumRounds() const;
 
         std::string GetPlayer0() const;
         std::vector<Choice> GetPlayer0History() const;
@@ -41,8 +40,6 @@ namespace qlm
         public:
         std::pair<std::string, int> Winner() const;
 
-        std::pair<int, int> Score(const Choice& player_0_choice, const Choice& player_1_choice) const;
-
         void Print() const;
 
         friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off); 
@@ -52,6 +49,8 @@ namespace qlm
     {
         // TODO
     };
+
+    std::pair<int, int> GetScore(const Choice player_0_choice, const Choice player_1_choice, const PayOff& pay_off = {});
 
     MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds = 200,  const PayOff& pay_off = {}); 
 
