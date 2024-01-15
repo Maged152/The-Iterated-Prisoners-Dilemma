@@ -4,5 +4,6 @@
 #include "types.hpp"
 #include "strategies.hpp"
 #include "competition.hpp"
+#include "helper.hpp"
 
 #endif
