@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    TitForTat::AlwaysCooperate()
+    AlwaysCooperate::AlwaysCooperate()
     {
         name = "AlwaysCooperate";
         info = "A player always cooperates.";
@@ -21,8 +21,8 @@ namespace qlm
     Choice AlwaysCooperate::Action(const Choice opponent_play)
     {
         // update history
-        UpdateHistory(Choice::COOPERAT, opponent_play);       
-        return Choice::COOPERAT;
+        UpdateHistory(Choice::COOPERATE, opponent_play);       
+        return Choice::COOPERATE;
     }
 
 }
