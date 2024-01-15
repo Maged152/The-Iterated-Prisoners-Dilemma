@@ -41,6 +41,7 @@ namespace qlm
         std::pair<std::string, int> Winner() const;
 
         void Print() const;
+        void SaveAsCSV(const std::string& file_name, char sep = ',') const;
 
         friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off); 
     };

@@ -11,10 +11,10 @@ namespace qlm
 
     struct Properties
     {
-        bool niceness; // 1 -> nice (not the first to defect), 0 -> nasty (defects first)
-        bool provocability;
-        bool forgiveness;
-        bool clarity;
+        bool niceness = true; // 1 -> nice (not the first to defect), 0 -> nasty (defects first)
+        bool provocability = true;
+        bool forgiveness = true;
+        bool clarity = true;
     };
 
     struct PayOff
