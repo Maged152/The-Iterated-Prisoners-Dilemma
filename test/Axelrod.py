@@ -5,7 +5,7 @@ def run_matches(strategies, rounds=100):
     winner, player_0_score, player_1_score
     C,D,D,C ... #ply0,ply1,...
     '''
-    file = open('python_results.txt','w')
+    file = open('../build/test/python_results.txt','w')
 
     for strategy1_idx in range(len(strategies)):
         for strategy2_idx in range(strategy1_idx, len(strategies)):
@@ -33,6 +33,5 @@ if __name__ == "__main__":
     run_matches(strategy_list, 5)
 
 '''
-C:/Users/Acer/anaconda3/Scripts/activate
 conda activate base
 '''

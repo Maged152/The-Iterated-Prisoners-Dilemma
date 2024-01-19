@@ -3,22 +3,22 @@
 namespace qlm
 {
     // constructor
-    AlwaysCooperate::AlwaysCooperate()
+    Cooperate::Cooperate()
     {
-        name = "AlwaysCooperate";
+        name = "Cooperate";
         info = "A player always cooperates.";
         properties.niceness = 1; // the others are not obvious or important as this
     }
 
     // First action function
-    Choice AlwaysCooperate::FirstAction()
+    Choice Cooperate::FirstAction()
     {
         my_history.push_back(Choice::COOPERATE);
         return Choice::COOPERATE;
     }
 
     // Action function
-    Choice AlwaysCooperate::Action(const Choice opponent_play)
+    Choice Cooperate::Action(const Choice opponent_play)
     {
         // update history
         UpdateHistory(Choice::COOPERATE, opponent_play);       
