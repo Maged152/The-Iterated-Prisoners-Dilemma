@@ -15,7 +15,9 @@
 namespace qlm
 {
     DECLARE_STRATEGY(TitForTat);
-    DECLARE_STRATEGY(Cooperate);
+    DECLARE_STRATEGY(Cooperator);
+    DECLARE_STRATEGY(Grudger);
+    DECLARE_STRATEGY(Defector);
 }
 
 #endif

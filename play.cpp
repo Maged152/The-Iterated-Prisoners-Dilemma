@@ -6,7 +6,7 @@ int main()
     qlm::TitForTat strategy0;
     strategy0.PrintInfo();
 
-    qlm::Cooperate strategy1;
+    qlm::Cooperator strategy1;
     strategy1.PrintInfo();
 
     auto m = qlm::Match(strategy0, strategy1, 20);

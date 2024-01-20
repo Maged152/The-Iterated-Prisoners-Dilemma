@@ -4,8 +4,10 @@ namespace test
 {
     void FillStrategies()
     {
-        ADD_STRATEGY(qlm::Cooperate);
+        ADD_STRATEGY(qlm::Cooperator);
         ADD_STRATEGY(qlm::TitForTat);
+        ADD_STRATEGY(qlm::Grudger);
+        ADD_STRATEGY(qlm::Defector);
     }
 
     bool Test_IPD()

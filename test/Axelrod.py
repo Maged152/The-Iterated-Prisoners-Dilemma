@@ -26,7 +26,7 @@ def run_matches(strategies, rounds=100):
 
 if __name__ == "__main__":
     # Define the list of strategies you want to test
-    strategy_list = [axl.Cooperator(), axl.TitForTat()]
+    strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector()]
     
     
     # Run matches
