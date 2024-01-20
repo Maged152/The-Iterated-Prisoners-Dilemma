@@ -66,7 +66,7 @@ Inside [Axelrod.py](test/Axelrod.py) add the strategy to the list `strategy_list
 strategy_list = [axl.Cooperator(), ... , axl.YourNewStrategy()]
 ```
 
-Inside [shakhbat_pd_test.cpp](test/shakhbat_pd_test.hpp) push the strategy to the vector `FillStrategies`.
+Inside [shakhbat_pd_test.cpp](test/shakhbat_pd_test.cpp) push the strategy to the vector `FillStrategies`.
 
 ```cpp
 void FillStrategies()
