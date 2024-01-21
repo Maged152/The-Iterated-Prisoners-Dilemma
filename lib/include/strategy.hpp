@@ -4,6 +4,7 @@
 #include "types.hpp"
 #include <vector>
 #include <string>
+#include <bitset>
 
 namespace qlm
 {
@@ -21,6 +22,7 @@ namespace qlm
         public:
         virtual Choice Action(const Choice opponent_play) = 0;
         virtual Choice FirstAction() = 0;
+        virtual void Reset() = 0;
 
         public:
         void ClearHistory();
