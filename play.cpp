@@ -3,13 +3,13 @@
 
 int main()
 {
-    qlm::TitForTat strategy0;
+    qlm::FirstByDavis strategy0;
     strategy0.PrintInfo();
 
-    qlm::Cooperator strategy1;
+    qlm::Defector strategy1;
     strategy1.PrintInfo();
 
-    auto m = qlm::Match(strategy0, strategy1, 20);
+    auto m = qlm::Match(strategy0, strategy0, 15);
     
     m.Print();
 }
