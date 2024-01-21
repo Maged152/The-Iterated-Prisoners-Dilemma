@@ -26,4 +26,12 @@ namespace qlm
         return opponent_play;
     }
 
+    // rest function
+    void TitForTat::Reset()
+    {
+        flags.reset();
+        my_history.clear();
+        opponent_history.clear();
+    }
+
 }

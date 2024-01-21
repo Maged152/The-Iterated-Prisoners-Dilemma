@@ -147,14 +147,14 @@ namespace qlm
         else if (player_0_score > player_1_score)
         {
             // player 0 won
-            std::cout << player_0 << "Wins" << " ,Score : " << player_0_score << std::endl;
-            std::cout << player_1 << "Losses" << " ,Score : " << player_1_score << std::endl;
+            std::cout << player_0 << " ,Wins" << " ,Score : " << player_0_score << std::endl;
+            std::cout << player_1 << " ,Losses" << " ,Score : " << player_1_score << std::endl;
         }
         else
         {
             // player 1 won
-            std::cout << player_1 << "Wins" << " ,Score : " << player_1_score << std::endl;
-            std::cout << player_0 << "Loses" << " ,Score : " << player_0_score << std::endl;
+            std::cout << player_1 << " ,Wins" << " ,Score : " << player_1_score << std::endl;
+            std::cout << player_0 << " ,Loses" << " ,Score : " << player_0_score << std::endl;
         }
 
         // print details

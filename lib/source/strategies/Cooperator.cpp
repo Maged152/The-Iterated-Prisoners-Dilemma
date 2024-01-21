@@ -25,4 +25,12 @@ namespace qlm
         return Choice::COOPERATE;
     }
 
+    // rest function
+    void Cooperator::Reset()
+    {
+        flags.reset();
+        my_history.clear();
+        opponent_history.clear();
+    }
+
 }

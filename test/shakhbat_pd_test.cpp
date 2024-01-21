@@ -8,9 +8,10 @@ namespace test
         ADD_STRATEGY(qlm::TitForTat);
         ADD_STRATEGY(qlm::Grudger);
         ADD_STRATEGY(qlm::Defector);
+        ADD_STRATEGY(qlm::FirstByDavis);
     }
 
-    bool Test_IPD()
+    bool Test_IPD(const int num_rounds = 15)
     {
         bool status = true;
         // fill the vector
@@ -35,7 +36,7 @@ namespace test
             for (int st_1 = st_0; st_1 < strategy_list.size(); st_1++)
             {
                 // run shakhbat_pd library 
-                auto match = qlm::Match(*strategy_list[st_0], *strategy_list[st_1], 5);
+                auto match = qlm::Match(*strategy_list[st_0], *strategy_list[st_1], num_rounds);
                 // match info
                 auto winner = match.Winner().first == "DRAW"? "False" : match.Winner().first;
                 auto player_0_score = match.GetPlayer0Score();
@@ -113,6 +114,10 @@ namespace test
 
                     index++;
                 }
+
+                // reset strategies
+                strategy_list[st_0]->Reset();
+                strategy_list[st_1]->Reset();
             }
         }
 

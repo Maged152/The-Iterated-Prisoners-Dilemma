@@ -3,32 +3,36 @@
 namespace qlm
 {
     // constructor
-    Grudger::Grudger()
+    FirstByDavis::FirstByDavis()
     {
-        name = "Grudger";
-        info = "A player starts by cooperating until the other player defects, and then defects until the end of the game.";
+        name = "FirstByDavis";
+        info = "A player starts by cooperating for 10 rounds then plays Grudger, defecting if at any point the opponent has defected";
         properties.niceness = 1; // the others are not obvious or important as this
+
         flags.reset();
     }
 
     // First action function
-    Choice Grudger::FirstAction()
+    Choice FirstByDavis::FirstAction()
     {
         my_history.push_back(Choice::COOPERATE);
         return Choice::COOPERATE;
     }
 
     // Action function
-    Choice Grudger::Action(const Choice opponent_play)
+    Choice FirstByDavis::Action(const Choice opponent_play)
     {
-        Choice action = Choice::COOPERATE;
+        constexpr int rounds_to_cooperate = 10;
+        const int round_num = my_history.size() + 1;
 
         if (opponent_play == Choice::DEFECT)
         {
             flags.set();
         }
 
-        if (flags[0])
+        Choice action = Choice::COOPERATE;
+
+        if (round_num > rounds_to_cooperate && flags[0])
         {
             action = Choice::DEFECT;
         }
@@ -40,7 +44,7 @@ namespace qlm
     }
 
     // rest function
-    void Grudger::Reset()
+    void FirstByDavis::Reset()
     {
         flags.reset();
         my_history.clear();

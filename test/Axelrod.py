@@ -26,11 +26,11 @@ def run_matches(strategies, rounds=100):
 
 if __name__ == "__main__":
     # Define the list of strategies you want to test
-    strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector()]
+    strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector(), axl.FirstByDavis()]
     
     
     # Run matches
-    run_matches(strategy_list, 5)
+    run_matches(strategy_list, 15)
 
 '''
 conda activate base

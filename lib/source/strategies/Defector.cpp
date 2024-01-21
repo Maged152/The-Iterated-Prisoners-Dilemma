@@ -25,4 +25,12 @@ namespace qlm
         return Choice::DEFECT;
     }
 
+    // rest function
+    void Defector::Reset()
+    {
+        flags.reset();
+        my_history.clear();
+        opponent_history.clear();
+    }
+
 }
