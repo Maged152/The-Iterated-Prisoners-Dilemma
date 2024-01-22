@@ -37,8 +37,8 @@ To run the Axelrod's Iterated Prisoner's Dilemma Tournament
 To add your own strategy to compete in the tournament, follow these steps:
 
 * Write your strategy as a class publicly internets from `Strategy` and place the declaration in `strategies.hpp`
-* If you only need the constructor, `FirstAction`, and `Action` function to be written (most probably), then use this macro
-    - DECLARE_STRATEGY(MyStrategy);
+* If you only need the `constructor`, `Reset`, `FirstAction`, and `Action` function to be written (most probably), then use this macro
+    - DECLARE_STRATEGY(MyStrategy, n);  // n is the number of flags you want `std::bitset<n> flags`
 * In the constructor you initialize the information of your strategy : `name`, `info`, `properties`.
 * The `FirstAction` will be called when your strategy starts first.
 * The `Action` is your action function and will take the opponent action as input and you access the history of actions.
