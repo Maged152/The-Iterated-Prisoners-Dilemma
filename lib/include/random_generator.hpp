@@ -10,10 +10,11 @@ namespace qlm
     {
         private:
         std::mt19937 rng; // Mersenne Twister 64-bit random number generator
+        int seed;
 
         public:
         // Constructor
-        RandomGenerator(int seed = 0) : rng(seed) {}
+        RandomGenerator(int seed = 0) : rng(seed), seed(seed) {}
 
         // Function to set a seed
         void SetSeed(int seed_) 
@@ -22,9 +23,13 @@ namespace qlm
         }
 
          // Function to generate a random float [0 - 1]
-        float Random() 
+        double Random() 
         {
-            return static_cast<float>(rng()) / rng.max();
+            // just to match numpy random for testing
+            int a = rng() >> 5;
+            int b = rng() >> 6;
+            double value = (a * 67108864.0 + b) / 9007199254740992.0;
+            return value;
         }
 
         // Function to generate a random integer in [a, b]
@@ -34,7 +39,12 @@ namespace qlm
             return distribution(rng);
         }
 
-        
+        // Function to reset the random generator to the original seed
+        void Reset() 
+        {
+            rng.seed(seed);
+        }
+
         // Function to generate a random choice based on a probability
         Choice random_choice(float p = 0.5f) 
         {
