@@ -9,6 +9,7 @@ namespace test
         ADD_STRATEGY(qlm::Grudger);
         ADD_STRATEGY(qlm::Defector);
         ADD_STRATEGY(qlm::FirstByDavis);
+        ADD_STRATEGY(qlm::FirstByGrofman);
     }
 
     bool Test_IPD(const int num_rounds = 15)
@@ -48,27 +49,21 @@ namespace test
 
                 // read python results
                 // read first line  (winner, score_0, score_1)
-                std::string line;
-                if (!std::getline(file, line))
+                std::string line_header, line_actions;
+                if (!std::getline(file, line_header))
                 {
                     std::cout << "File python_results.txt is empty\n";
                     file.close();
 			        return false;
                 }
 
-                std::stringstream ss_header(line);
+                std::stringstream ss_header(line_header);
                 std::string token;
                 std::vector<std::string> py_header_res;
                 while (std::getline(ss_header, token, sep)) 
                 {
                     py_header_res.push_back(token);
                 }
-                
-                // for (int i = 0; i < 3; i++)
-                // {
-                //     std::cout << py_header_res[i] << " " << lib_header_res[i] << "\n";
-                // }
-                
 
                 // compare 
                 if (py_header_res[0] != lib_header_res[0] ||
@@ -77,28 +72,35 @@ namespace test
                 {
                     status = false;
                     std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " : Failed\n";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        std::cout << "py : " << py_header_res[i] << " , lib : " << lib_header_res[i] << "\n";
+                    }
+
+                    // dummy read
+                    std::getline(file, line_actions);
+
                     continue;
                 }
 
                 // read second line (actions)
-                if (!std::getline(file, line))
+                if (!std::getline(file, line_actions))
                 {
                     std::cout << "File python_results.txt is not completed\n";
                     file.close();
 			        return false;
                 }
 
-                std::stringstream ss_actions(line);
+                std::stringstream ss_actions(line_actions);
                 int index = 0;
                 while (std::getline(ss_actions, token, sep)) 
                 {
-                    //std::cout << token << " " << player_0_actions[index] << "\n";
-
                     if (!((token == "C" && player_0_actions[index] == qlm::Choice::COOPERATE) || 
                           (token == "D" && player_0_actions[index] == qlm::Choice::DEFECT)))
                     {
                         status = false;
                         std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " : Failed\n";
+                        std::cout << "py : " << token << " ,pl0 : " << player_0_actions[index] << "\n";
                         continue;
                     }
 
@@ -109,6 +111,7 @@ namespace test
                     {
                         status = false;
                         std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " : Failed\n";
+                        std::cout << "py : " << token << " ,pl1 : " << player_1_actions[index] << "\n";
                         continue;
                     }
 

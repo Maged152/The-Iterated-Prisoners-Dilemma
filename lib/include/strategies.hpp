@@ -22,6 +22,7 @@ namespace qlm
     DECLARE_STRATEGY(Grudger, 1);
     DECLARE_STRATEGY(Defector, 0);
     DECLARE_STRATEGY(FirstByDavis, 1);
+    DECLARE_STRATEGY(FirstByGrofman, 0);
 }
 
 #endif

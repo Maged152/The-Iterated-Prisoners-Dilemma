@@ -14,7 +14,7 @@ namespace qlm
 
         public:
         // Constructor
-        RandomGenerator(int seed = 0) : rng(seed), seed(seed) {}
+        RandomGenerator(int seed = 2357136044) : rng(seed), seed(seed) {}
 
         // Function to set a seed
         void SetSeed(int seed_) 
@@ -46,7 +46,7 @@ namespace qlm
         }
 
         // Function to generate a random choice based on a probability
-        Choice random_choice(float p = 0.5f) 
+        Choice random_choice(double p = 0.5f) 
         {
             if (p == 0.0f) 
             {
@@ -58,7 +58,7 @@ namespace qlm
                 return Choice::COOPERATE;
             }
 
-            float r = this->Random();
+            double r = this->Random();
 
             return r < p ? Choice::COOPERATE : Choice::DEFECT;
         }

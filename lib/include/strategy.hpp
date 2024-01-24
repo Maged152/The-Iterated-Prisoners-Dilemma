@@ -2,6 +2,7 @@
 #define STRATEGY
 
 #include "types.hpp"
+#include "random_generator.hpp"
 #include <vector>
 #include <string>
 #include <bitset>
@@ -18,6 +19,8 @@ namespace qlm
         std::string name;
         std::string info;
         Properties properties;
+
+        RandomGenerator random_gen;
 
         public:
         virtual Choice Action(const Choice opponent_play) = 0;
