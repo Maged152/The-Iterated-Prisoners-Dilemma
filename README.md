@@ -1,5 +1,16 @@
 # The Prisoner's Dilemma Game
 
+## Table of Contents
+
+1. [Introduction](#Introduction)
+2. [Prerequisites and building](#Prerequisites%20and%20building)
+3. [Creating Matches](#Creating%20Matches)
+4. [Running the Tournament](#Running%20the%20Tournament)
+5. [Adding Your Strategy](#Adding%20Your%20Strategy)
+6. [Testing](#Testing)
+7. [Contributing](#Contributing)
+8. [Acknowledgments](#Acknowledgments)
+
 ## Introduction
 Welcome to the implementation of Axelrod's Iterated Prisoner's Dilemma Tournament! This repository contains the code (in C++) for simulating and participating in the famous Axelrod's Iterated Prisoner's Dilemma (IPD) Tournament. The tournament is a classic example in game theory, where participants (strategies) compete against each other in a series of repeated prisoner's dilemma games.
 
@@ -29,6 +40,55 @@ Running :
     $ make play
 
 This will link (and build if not builded) the library with `play.cpp`, and produce `play.exe` which you can run
+
+## Creating Matches
+You can create your own match between two strategies using the `qlm::Match` function.
+
+```c++
+	// first strategy
+    qlm::FirstByJoss strategy_0;
+
+    // second strategy
+    qlm::TitForTat strategy_1;
+
+    // match parameters
+    const unsigned int num_rounds = 15;
+    const qlm::PayOff pay_off {}; // default pay off
+    const int seed = 0; // seed for  probabilistic strategies
+
+    qlm::MatchResult match = qlm::Match(strategy_0, strategy_1, num_rounds, pay_off, seed);
+    
+    // print results
+    match.Print();
+
+    // save results as csv file
+    match.SaveAsCSV("match_results.csv");
+```
+The output :
+```
+First by Joss: 0.9  VS  TitForTat
+Match result of 15 rounds :
+First by Joss: 0.9 Wins ,Score : 42
+TitForTat Losses ,Score : 37
+| Round | First by Joss: 0.9 | TitForTat |
+| ----- | ------------------ | --------- |
+| 0     | COOPERATE          | COOPERATE |
+| 1     | COOPERATE          | COOPERATE |
+| 2     | COOPERATE          | COOPERATE |
+| 3     | COOPERATE          | COOPERATE |
+| 4     | DEFECT             | COOPERATE |
+| 5     | COOPERATE          | DEFECT    |
+| 6     | DEFECT             | COOPERATE |
+| 7     | COOPERATE          | DEFECT    |
+| 8     | DEFECT             | COOPERATE |
+| 9     | COOPERATE          | DEFECT    |
+| 10    | DEFECT             | COOPERATE |
+| 11    | COOPERATE          | DEFECT    |
+| 12    | DEFECT             | COOPERATE |
+| 13    | COOPERATE          | DEFECT    |
+| 14    | DEFECT             | COOPERATE |
+| ----- | ------------------ | --------- |
+```
 
 ## Running the Tournament
 To run the Axelrod's Iterated Prisoner's Dilemma Tournament

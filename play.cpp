@@ -3,13 +3,22 @@
 
 int main()
 {
-    qlm::FirstByDavis strategy0;
-    strategy0.PrintInfo();
+    // first strategy
+    qlm::FirstByJoss strategy_0;
 
-    qlm::Defector strategy1;
-    strategy1.PrintInfo();
+    // second strategy
+    qlm::TitForTat strategy_1;
 
-    auto m = qlm::Match(strategy0, strategy0, 15);
+    // match parameters
+    const unsigned int num_rounds = 15;
+    const qlm::PayOff pay_off {}; // default pay off
+    const int seed = 0; // seed for  probabilistic strategies
+
+    qlm::MatchResult match = qlm::Match(strategy_0, strategy_1, num_rounds, pay_off, seed);
     
-    m.Print();
+    // print results
+    match.Print();
+
+    // save results as csv file
+    match.SaveAsCSV("match_results.csv");
 }
