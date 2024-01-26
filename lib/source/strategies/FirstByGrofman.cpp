@@ -7,6 +7,7 @@ namespace qlm
     {
         name = "FirstByGrofman";
         info = "If the players did different things on the previous move, this rule > cooperates with probability 2/7. Otherwise this rule always cooperates.";
+        probabilistic_action = true;
         properties.niceness = 1; // the others are not obvious or important as this
         flags.reset();
     }
@@ -21,7 +22,7 @@ namespace qlm
     // Action function
     Choice FirstByGrofman::Action(const Choice opponent_play)
     {
-        constexpr float probability = 2.0f / 7.0f;
+        constexpr double probability = 2.0 / 7.0;
         Choice action = Choice::COOPERATE;
 
         // check players previous moves 

@@ -7,6 +7,7 @@ namespace qlm
     {
         name = "Grudger";
         info = "A player starts by cooperating until the other player defects, and then defects until the end of the game.";
+        probabilistic_action = false;
         properties.niceness = 1; // the others are not obvious or important as this
         flags.reset();
     }

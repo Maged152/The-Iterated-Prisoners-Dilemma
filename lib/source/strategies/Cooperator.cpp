@@ -7,6 +7,7 @@ namespace qlm
     {
         name = "Cooperator";
         info = "A player always cooperates.";
+        probabilistic_action = false;
         properties.niceness = 1; // the others are not obvious or important as this
     }
 

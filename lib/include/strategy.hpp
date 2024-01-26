@@ -19,6 +19,7 @@ namespace qlm
         std::string name;
         std::string info;
         Properties properties;
+        bool probabilistic_action;
 
         RandomGenerator random_gen;
 
@@ -34,6 +35,8 @@ namespace qlm
         void PrintInfo() const;
 
         std::vector<Choice> GetMyHistory() const;
+        void SetSeed(int seed);
+        bool ProbabilisticAction() const;
 
         protected:
         std::size_t GetRoundNumber() const;

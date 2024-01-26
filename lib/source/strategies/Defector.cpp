@@ -7,6 +7,7 @@ namespace qlm
     {
         name = "Defector";
         info = "A player always defects.";
+        probabilistic_action = false;
         properties.niceness = 0; // the others are not obvious or important as this
     }
 

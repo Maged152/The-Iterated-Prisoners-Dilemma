@@ -16,6 +16,7 @@ namespace qlm
     Choice FirstByDavis::FirstAction()
     {
         my_history.push_back(Choice::COOPERATE);
+        probabilistic_action = false;
         return Choice::COOPERATE;
     }
 
