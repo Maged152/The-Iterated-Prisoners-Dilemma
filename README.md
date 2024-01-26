@@ -3,10 +3,10 @@
 ## Table of Contents
 
 1. [Introduction](#Introduction)
-2. [Prerequisites and building](#Prerequisites%20and%20building)
-3. [Creating Matches](#Creating%20Matches)
-4. [Running the Tournament](#Running%20the%20Tournament)
-5. [Adding Your Strategy](#Adding%20Your%20Strategy)
+2. [Prerequisites and building](#Prerequisites-And-Building)
+3. [Creating Matches](#Creating-Matches)
+4. [Running the Tournament](#Running-the-Tournament)
+5. [Adding Your Strategy](#Adding-Your-Strategy)
 6. [Testing](#Testing)
 7. [Contributing](#Contributing)
 8. [Acknowledgments](#Acknowledgments)
@@ -14,7 +14,7 @@
 ## Introduction
 Welcome to the implementation of Axelrod's Iterated Prisoner's Dilemma Tournament! This repository contains the code (in C++) for simulating and participating in the famous Axelrod's Iterated Prisoner's Dilemma (IPD) Tournament. The tournament is a classic example in game theory, where participants (strategies) compete against each other in a series of repeated prisoner's dilemma games.
 
-## Prerequisites and building
+## Prerequisites And Building
 The only prerequisites for library are CMake 3.22+ and a C++20 (and MinGW if you are going to use makefile)
 compiler.
 
