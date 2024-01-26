@@ -2,6 +2,8 @@
 #include "helper.hpp"
 #include <cmath>
 #include <random>
+#include <fstream>
+
 namespace qlm
 {
     // score function
@@ -207,4 +209,36 @@ namespace qlm
     }
 
     // save as csv
+    void MatchResult::SaveAsCSV(const std::string& file_name, char sep) const
+    {
+        // Create an output file stream object
+		std::ofstream file(file_name);
+
+        // write header
+        file << "Strategy"<< sep <<"Score";
+
+        for (int i = 0; i < player_0_history.size(); i++)
+        {
+            file << sep << "Round " + std::to_string(i + 1);
+        }
+        file << "\n";
+
+        // write strategy 1 data
+        file << player_0 << sep << player_0_score;
+
+        for (auto& c : player_0_history)
+        {
+            file << sep << c;
+        }
+        file << "\n";
+
+        // write strategy 2 data
+        file << player_1 << sep << player_1_score;
+
+        for (auto& c : player_1_history)
+        {
+            file << sep << c;
+        }
+        file << "\n";
+    }
 }
