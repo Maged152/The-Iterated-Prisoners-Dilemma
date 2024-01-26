@@ -1,5 +1,5 @@
 #include "shakhbat_pd_test.hpp"
-
+#include <random>
 namespace test
 {
     void FillStrategies()
@@ -10,6 +10,7 @@ namespace test
         ADD_STRATEGY(qlm::Defector);
         ADD_STRATEGY(qlm::FirstByDavis);
         ADD_STRATEGY(qlm::FirstByGrofman);
+        ADD_STRATEGY(qlm::FirstByJoss);
     }
 
     bool Test_IPD(const int num_rounds = 15)
@@ -32,12 +33,12 @@ namespace test
         const char sep = ',';
 
         // loop over the strategies
-        for (int st_0 = 0; st_0 < strategy_list.size(); st_0++)
+        for (int st_0 = 0; st_0 < strategy_list0.size(); st_0++)
         {
-            for (int st_1 = st_0; st_1 < strategy_list.size(); st_1++)
+            for (int st_1 = st_0; st_1 < strategy_list0.size(); st_1++)
             {
                 // run shakhbat_pd library 
-                auto match = qlm::Match(*strategy_list[st_0], *strategy_list[st_1], num_rounds);
+                auto match = qlm::Match(*strategy_list0[st_0], *strategy_list1[st_1], num_rounds);
                 // match info
                 auto winner = match.Winner().first == "DRAW"? "False" : match.Winner().first;
                 auto player_0_score = match.GetPlayer0Score();
@@ -119,8 +120,8 @@ namespace test
                 }
 
                 // reset strategies
-                strategy_list[st_0]->Reset();
-                strategy_list[st_1]->Reset();
+                strategy_list0[st_0]->Reset();
+                strategy_list1[st_1]->Reset();
             }
         }
 

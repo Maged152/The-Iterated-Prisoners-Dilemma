@@ -9,7 +9,7 @@ def run_matches(strategies, rounds=100):
 
     for strategy1_idx in range(len(strategies)):
         for strategy2_idx in range(strategy1_idx, len(strategies)):
-            players = (strategies[strategy1_idx], strategies[strategy2_idx])
+            players = (strategies[strategy1_idx].clone(), strategies[strategy2_idx].clone())
             match = axl.Match(players, turns=rounds)
             match.set_seed(0)
             # Extract relevant information
@@ -20,15 +20,13 @@ def run_matches(strategies, rounds=100):
             file.write("%s,%d,%d\n" % (winner, scores[0], scores[1]))
             moves = ",".join(["{},{}".format(move[0], move[1]) for move in interactions])
             file.write("%s\n" % moves)
-            strategies[strategy1_idx].reset()
-            strategies[strategy2_idx].reset()
-            
 
     file.close()
 
 if __name__ == "__main__":
     # Define the list of strategies you want to test
-    strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector(), axl.FirstByDavis(), axl.FirstByGrofman()]
+    strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector(), axl.FirstByDavis(), axl.FirstByGrofman(),
+                     axl.FirstByJoss()]
     
     # Run matches
     run_matches(strategy_list, 15)

@@ -1,6 +1,7 @@
 #include "competition.hpp"
 #include "helper.hpp"
 #include <cmath>
+#include <random>
 namespace qlm
 {
     // score function
@@ -87,13 +88,26 @@ namespace qlm
     }
 
     // match function
-    MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off)
+    MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off, int seed)
     {
         MatchResult match_result {player_0.Name(), player_1.Name(), pay_off, num_rounds};
 
         // clear history
         player_0.ClearHistory();
         player_1.ClearHistory();
+
+        // set seed
+        std::mt19937 rng(seed);
+
+        if (player_0.ProbabilisticAction())
+        {
+            player_0.SetSeed(rng());
+        }
+
+        if (player_1.ProbabilisticAction())
+        {
+            player_1.SetSeed(rng());
+        }
 
         // first move
         auto player_0_action = player_0.FirstAction();

@@ -43,7 +43,7 @@ namespace qlm
         void Print() const;
         void SaveAsCSV(const std::string& file_name, char sep = ',') const;
 
-        friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off); 
+        friend MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds,  const PayOff& pay_off, int seed); 
     };
 
     class TournamentResult
@@ -53,7 +53,7 @@ namespace qlm
 
     std::pair<int, int> GetScore(const Choice player_0_choice, const Choice player_1_choice, const PayOff& pay_off = {});
 
-    MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds = 200,  const PayOff& pay_off = {}); 
+    MatchResult Match(Strategy& player_0, Strategy& player_1, unsigned int num_rounds = 200,  const PayOff& pay_off = {}, int seed = 0); 
 
     TournamentResult Tournament(std::vector<Strategy>& players, unsigned int num_rounds = 200, const PayOff& pay_off = {});
 }

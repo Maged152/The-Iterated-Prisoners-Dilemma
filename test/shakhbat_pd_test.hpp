@@ -10,10 +10,12 @@
 #include <memory> 
 
 // test strategies
-std::vector<std::unique_ptr<qlm::Strategy>> strategy_list;
+std::vector<std::unique_ptr<qlm::Strategy>> strategy_list0;
+std::vector<std::unique_ptr<qlm::Strategy>> strategy_list1;
 
 // Macro to declare a new strategy
-#define ADD_STRATEGY(Strategy_name) strategy_list.push_back(std::make_unique<Strategy_name>());
+#define ADD_STRATEGY(Strategy_name) strategy_list0.push_back(std::make_unique<Strategy_name>()); \
+                                    strategy_list1.push_back(std::make_unique<Strategy_name>());
 
 
 #endif
