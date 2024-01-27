@@ -8,7 +8,7 @@ namespace qlm
         name = "TitForTat";
         info = "A player starts by cooperating and then mimics the previous action of the opponent.";
         probabilistic_action = false;
-        properties.niceness = 1; // the others are not obvious or important as this
+        properties.niceness = 1; // the others are not obvious or not important as this
     }
 
     // First action function
