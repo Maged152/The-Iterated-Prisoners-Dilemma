@@ -37,9 +37,11 @@ namespace qlm
     DECLARE_STRATEGY(FirstByDavis, 1);
     DECLARE_STRATEGY(FirstByGrofman, 0);
     DECLARE_STRATEGY(FirstByJoss, 0);
+    DECLARE_STRATEGY(FirstByFeld, 0);
 
     /********************************** strategies with extra members **************************************/
     DECLARE_STRATEGY_EXTRA(FirstByShubik, 1, int retaliation_counter; int retaliation_remaining);
+    
 }
 
 #endif

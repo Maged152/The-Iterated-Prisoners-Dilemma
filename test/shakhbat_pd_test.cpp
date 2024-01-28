@@ -12,6 +12,7 @@ namespace test
         ADD_STRATEGY(qlm::FirstByGrofman);
         ADD_STRATEGY(qlm::FirstByJoss);
         ADD_STRATEGY(qlm::FirstByShubik);
+        ADD_STRATEGY(qlm::FirstByFeld);
     }
 
     bool Test_IPD(const int num_rounds = 15)
