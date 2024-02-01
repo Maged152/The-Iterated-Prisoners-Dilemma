@@ -13,6 +13,7 @@ namespace test
         ADD_STRATEGY(qlm::FirstByJoss);
         ADD_STRATEGY(qlm::FirstByShubik);
         ADD_STRATEGY(qlm::FirstByFeld);
+        ADD_STRATEGY(qlm::FirstByTullock);
     }
 
     bool Test_IPD(const int num_rounds = 15)
@@ -32,7 +33,7 @@ namespace test
 		}
 
         // used for reading and parsing the text
-        const char sep = ',';
+        const char sep = ';';
 
         // loop over the strategies
         for (int st_0 = 0; st_0 < strategy_list0.size(); st_0++)
@@ -104,6 +105,10 @@ namespace test
                         status = false;
                         std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " : Failed\n";
                         std::cout << "py : " << token << " ,pl0 : " << player_0_actions[index] << "\n";
+
+                        // dummy read
+                        std::getline(file, line_actions);
+
                         continue;
                     }
 
@@ -136,7 +141,7 @@ namespace test
 
 int main ()
 {
-    bool status = test::Test_IPD();
+    bool status = test::Test_IPD(200);
 
     if (status == true)
     {

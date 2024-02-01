@@ -17,8 +17,8 @@ def run_matches(strategies, rounds=100):
             scores = match.final_score()
             winner = match.winner()
 
-            file.write("%s,%d,%d\n" % (winner, scores[0], scores[1]))
-            moves = ",".join(["{},{}".format(move[0], move[1]) for move in interactions])
+            file.write("%s;%d;%d\n" % (winner, scores[0], scores[1]))
+            moves = ";".join(["{};{}".format(move[0], move[1]) for move in interactions])
             file.write("%s\n" % moves)
 
     file.close()
@@ -26,11 +26,7 @@ def run_matches(strategies, rounds=100):
 if __name__ == "__main__":
     # Define the list of strategies you want to test
     strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector(), axl.FirstByDavis(), axl.FirstByGrofman(),
-                     axl.FirstByJoss(), axl.FirstByShubik(), axl.FirstByFeld()]
+                     axl.FirstByJoss(), axl.FirstByShubik(), axl.FirstByFeld(), axl.FirstByTullock()]
     
     # Run matches
-    run_matches(strategy_list, 15)
-
-'''
-conda activate base
-'''
+    run_matches(strategy_list, 200)

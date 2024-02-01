@@ -6,7 +6,7 @@ namespace qlm
     // constructor
     FirstByFeld::FirstByFeld()
     {
-        name = "FirstByFeld";
+        name = "First by Feld: 1.0, 0.5, 200";
         info = "This rule starts with tit for tat and gradually lowers its probability of \
                 cooperation following the other's cooperation to .5 by the two hundredth \
                  move. It always defects after a defection by the other.";
