@@ -42,6 +42,7 @@ namespace qlm
 
     /********************************** strategies with extra members **************************************/
     DECLARE_STRATEGY_EXTRA(FirstByShubik, 1, int retaliation_counter; int retaliation_remaining);
+    DECLARE_STRATEGY_EXTRA(FirstByNydegger, 0, int arr[19]);
 }
 
 #endif

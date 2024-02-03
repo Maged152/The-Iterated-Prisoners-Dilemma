@@ -14,6 +14,7 @@ namespace test
         ADD_STRATEGY(qlm::FirstByShubik);
         ADD_STRATEGY(qlm::FirstByFeld);
         ADD_STRATEGY(qlm::FirstByTullock);
+        ADD_STRATEGY(qlm::FirstByNydegger);
     }
 
     bool Test_IPD(const int num_rounds = 15)
