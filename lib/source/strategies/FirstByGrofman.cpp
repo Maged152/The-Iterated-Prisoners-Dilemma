@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    FirstByGrofman::FirstByGrofman()
+    FirstByGrofman::FirstByGrofman(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "FirstByGrofman";
         info = "If the players did different things on the previous move, this rule > cooperates with probability 2/7. Otherwise this rule always cooperates.";
@@ -41,9 +41,8 @@ namespace qlm
     // rest function
     void FirstByGrofman::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
         random_gen.Reset();
     }
 

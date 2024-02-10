@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    FirstByShubik::FirstByShubik()
+    FirstByShubik::FirstByShubik(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "FirstByShubik";
         info = "This rule cooperates until the other defects, and then defects once. If the other defects again after the \
@@ -69,9 +69,8 @@ namespace qlm
     // rest function
     void FirstByShubik::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
         retaliation_counter = 0;
         retaliation_remaining = 0;
     }

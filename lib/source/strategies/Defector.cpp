@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    Defector::Defector()
+    Defector::Defector(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "Defector";
         info = "A player always defects.";
@@ -29,9 +29,8 @@ namespace qlm
     // rest function
     void Defector::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

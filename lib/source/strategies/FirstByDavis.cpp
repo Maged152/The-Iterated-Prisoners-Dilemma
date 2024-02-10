@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    FirstByDavis::FirstByDavis()
+    FirstByDavis::FirstByDavis(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "First by Davis: 10";
         info = "A player starts by cooperating for 10 rounds then plays Grudger, defecting if at any point the opponent has defected";
@@ -47,9 +47,8 @@ namespace qlm
     // rest function
     void FirstByDavis::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

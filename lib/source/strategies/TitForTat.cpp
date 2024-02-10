@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    TitForTat::TitForTat()
+    TitForTat::TitForTat(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "TitForTat";
         info = "A player starts by cooperating and then mimics the previous action of the opponent.";
@@ -30,9 +30,8 @@ namespace qlm
     // rest function
     void TitForTat::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

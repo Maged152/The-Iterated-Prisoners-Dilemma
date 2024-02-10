@@ -3,6 +3,9 @@
 
 namespace qlm
 {
+    Strategy::Strategy (const PayOff& pay_off) : pay_off(pay_off), num_coop(0), num_def(0)
+    {}
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void Strategy::ClearHistory()
     {
         my_history.clear();
@@ -31,7 +34,7 @@ namespace qlm
         return my_history;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    std::size_t Strategy::GetRoundNumber() const
+    std::size_t Strategy::Round() const
     {
         // the round is just the size of my history + 1 (first round is number 1)
         return my_history.size() + 1;
@@ -53,5 +56,12 @@ namespace qlm
         return this->probabilistic_action;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+    void Strategy::Reset()
+    {
+        num_coop = 0;
+        num_def = 0;
+        my_history.clear();
+        opponent_history.clear();
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

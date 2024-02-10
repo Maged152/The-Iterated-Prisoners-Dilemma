@@ -4,7 +4,7 @@
 namespace qlm
 {
     // constructor
-    FirstByFeld::FirstByFeld()
+    FirstByFeld::FirstByFeld(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "First by Feld: 1.0, 0.5, 200";
         info = "This rule starts with tit for tat and gradually lowers its probability of \
@@ -53,9 +53,8 @@ namespace qlm
     // rest function
     void FirstByFeld::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

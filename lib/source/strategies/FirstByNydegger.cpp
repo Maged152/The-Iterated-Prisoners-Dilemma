@@ -4,7 +4,7 @@
 namespace qlm
 {
     // constructor
-    FirstByNydegger::FirstByNydegger() : arr{1, 6, 7, 17, 22, 23, 26, 29, 30, 31, 33, 38, 39, 45, 49, 54, 55, 58, 61}
+    FirstByNydegger::FirstByNydegger(const PayOff& pay_off) : Strategy(pay_off), arr{1, 6, 7, 17, 22, 23, 26, 29, 30, 31, 33, 38, 39, 45, 49, 54, 55, 58, 61}
     {
         name = "First by nydegger";
         info = "The program begins with tit for tat for the first three moves, \
@@ -103,9 +103,8 @@ namespace qlm
     // rest function
     void FirstByNydegger::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

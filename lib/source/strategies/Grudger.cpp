@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    Grudger::Grudger()
+    Grudger::Grudger(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "Grudger";
         info = "A player starts by cooperating until the other player defects, and then defects until the end of the game.";
@@ -43,9 +43,8 @@ namespace qlm
     // rest function
     void Grudger::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

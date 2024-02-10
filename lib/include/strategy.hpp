@@ -23,12 +23,16 @@ namespace qlm
 
         RandomGenerator random_gen;
 
+        PayOff pay_off;
+        int num_coop; 
+        int num_def;
+
         public:
         virtual Choice Action(const Choice opponent_play) = 0;
         virtual Choice FirstAction() = 0;
-        virtual void Reset() = 0;
 
         public:
+        Strategy (const PayOff& pay_off);
         void ClearHistory();
         void UpdateHistory(const Choice my_play, const Choice opponent_play);
         std::string Name() const;
@@ -37,9 +41,10 @@ namespace qlm
         std::vector<Choice> GetMyHistory() const;
         void SetSeed(int seed);
         bool ProbabilisticAction() const;
+        void Reset();
 
         protected:
-        std::size_t GetRoundNumber() const;
+        std::size_t Round() const;
     };
 }
 

@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    FirstByTullock::FirstByTullock()
+    FirstByTullock::FirstByTullock(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "First by Tullock";
         info = "This rule cooperates for the first 11 rounds then randomly \
@@ -64,9 +64,8 @@ namespace qlm
     // rest function
     void FirstByTullock::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }

@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    FirstByJoss::FirstByJoss()
+    FirstByJoss::FirstByJoss(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "First by Joss: 0.9";
         info = "This rule cooperates 90% of the time after a cooperation by the other. It > always defects after a defection by the other.";
@@ -42,9 +42,8 @@ namespace qlm
     // rest function
     void FirstByJoss::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
         random_gen.Reset();
     }
 

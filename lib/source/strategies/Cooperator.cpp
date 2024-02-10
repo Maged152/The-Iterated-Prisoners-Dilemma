@@ -3,7 +3,7 @@
 namespace qlm
 {
     // constructor
-    Cooperator::Cooperator()
+    Cooperator::Cooperator(const PayOff& pay_off) : Strategy(pay_off)
     {
         name = "Cooperator";
         info = "A player always cooperates.";
@@ -29,9 +29,8 @@ namespace qlm
     // rest function
     void Cooperator::Reset()
     {
+        Strategy::Reset();
         flags.reset();
-        my_history.clear();
-        opponent_history.clear();
     }
 
 }
