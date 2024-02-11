@@ -8,7 +8,7 @@ namespace qlm
         name = "Defector";
         info = "A player always defects.";
         probabilistic_action = false;
-        properties.niceness = 0; // the others are not obvious or not important as this
+        properties.niceness = 0;
     }
 
     // First action function

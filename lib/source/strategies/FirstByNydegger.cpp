@@ -19,7 +19,7 @@ namespace qlm
                 This rule was > designed for use in laboratory experiments as a stooge which had a memory > \
                 and appeared to be trustworthy, potentially cooperative, but not gullible > (Nydegger, 1978).";
         probabilistic_action = false;
-        properties.niceness = 1; // the others are not obvious or not important as this
+        properties.niceness = 1;
     }
 
     // First action function

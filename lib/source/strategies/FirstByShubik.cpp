@@ -12,7 +12,7 @@ namespace qlm
                 This rule is described with its strategic implications in Shubik (1970).  Further \
                 treatment of its is given in Taylor (1976).";
         probabilistic_action = false;
-        properties.niceness = 1; // the others are not obvious or not important as this
+        properties.niceness = 1;
         flags.reset();
         retaliation_counter = 0;
         retaliation_remaining = 0;

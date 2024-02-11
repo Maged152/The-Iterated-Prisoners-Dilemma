@@ -8,7 +8,7 @@ namespace qlm
         name = "FirstByGrofman";
         info = "If the players did different things on the previous move, this rule > cooperates with probability 2/7. Otherwise this rule always cooperates.";
         probabilistic_action = true;
-        properties.niceness = 1; // the others are not obvious or not important as this
+        properties.niceness = 1;
         flags.reset();
     }
 

@@ -9,7 +9,7 @@ namespace qlm
         info = "This rule cooperates for the first 11 rounds then randomly \
                 cooperates 10% less often than the opponent has in the previous 10 rounds.";
         probabilistic_action = true;
-        properties.niceness = 0; // the others are not obvious or not important as this
+        properties.niceness = 0;
     }
 
     // First action function

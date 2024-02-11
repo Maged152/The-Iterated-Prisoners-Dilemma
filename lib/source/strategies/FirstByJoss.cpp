@@ -8,7 +8,7 @@ namespace qlm
         name = "First by Joss: 0.9";
         info = "This rule cooperates 90% of the time after a cooperation by the other. It > always defects after a defection by the other.";
         probabilistic_action = true;
-        properties.niceness = 0; // the others are not obvious or not important as this
+        properties.niceness = 0;
         flags.reset();
     }
 

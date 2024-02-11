@@ -30,9 +30,7 @@ namespace qlm
     DECLARE_STRATEGY(FirstByTullock, 0);
     DECLARE_STRATEGY(FirstByShubik, 1, int retaliation_counter; int retaliation_remaining);
     DECLARE_STRATEGY(FirstByNydegger, 0, int arr[19]);
-    /********************************** strategies with extra members **************************************/
-    
-    //DECLARE_STRATEGY_EXTRA(FirstByDowning, 0, int opp_coop_response_to_c; int opp_coop_response_to_d;  );
+    DECLARE_STRATEGY(FirstByDowning, 0, int opp_coop_response_to_c; int opp_coop_response_to_d);
 }
 
 #endif

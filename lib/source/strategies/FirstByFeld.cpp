@@ -11,7 +11,7 @@ namespace qlm
                 cooperation following the other's cooperation to .5 by the two hundredth \
                  move. It always defects after a defection by the other.";
         probabilistic_action = true;
-        properties.niceness = 1; // the others are not obvious or not important as this
+        properties.niceness = 1;
     }
 
     // First action function

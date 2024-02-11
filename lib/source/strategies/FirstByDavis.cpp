@@ -7,7 +7,7 @@ namespace qlm
     {
         name = "First by Davis: 10";
         info = "A player starts by cooperating for 10 rounds then plays Grudger, defecting if at any point the opponent has defected";
-        properties.niceness = 1; // the others are not obvious or not important as this
+        properties.niceness = 1;
 
         flags.reset();
     }

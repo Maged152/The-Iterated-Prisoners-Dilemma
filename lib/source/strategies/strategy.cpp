@@ -16,6 +16,15 @@ namespace qlm
     {
         my_history.push_back(my_play);
         opponent_history.push_back(opponent_play);
+
+        if (my_play == Choice::COOPERATE)
+        {
+            num_coop++;
+        }
+        else
+        {
+            num_def++;
+        }
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void Strategy::PrintInfo() const
