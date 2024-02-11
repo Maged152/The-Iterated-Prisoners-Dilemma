@@ -69,7 +69,7 @@ namespace qlm
     // rest function
     void FirstByShubik::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
         retaliation_counter = 0;
         retaliation_remaining = 0;

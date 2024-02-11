@@ -29,7 +29,7 @@ namespace qlm
     // rest function
     void Defector::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 

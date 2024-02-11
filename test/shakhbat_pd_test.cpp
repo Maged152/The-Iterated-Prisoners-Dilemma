@@ -15,9 +15,10 @@ namespace test
         ADD_STRATEGY(qlm::FirstByFeld);
         ADD_STRATEGY(qlm::FirstByTullock);
         ADD_STRATEGY(qlm::FirstByNydegger);
+        ADD_STRATEGY(qlm::FirstByDowning);
     }
 
-    bool Test_IPD(const int num_rounds = 15)
+    bool Test_IPD(const int num_rounds = 200)
     {
         bool status = true;
         // fill the vector

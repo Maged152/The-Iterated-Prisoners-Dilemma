@@ -30,7 +30,6 @@ namespace qlm
         public:
         virtual Choice Action(const Choice opponent_play) = 0;
         virtual Choice FirstAction() = 0;
-        virtual void Reset() = 0;
 
         public:
         Strategy (const PayOff& pay_off);
@@ -42,7 +41,7 @@ namespace qlm
         std::vector<Choice> GetMyHistory() const;
         void SetSeed(int seed);
         bool ProbabilisticAction() const;
-        void BaseReset();
+        void Reset();
 
         protected:
         std::size_t Round() const;

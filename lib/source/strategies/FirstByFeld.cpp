@@ -53,7 +53,7 @@ namespace qlm
     // rest function
     void FirstByFeld::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 

@@ -42,7 +42,7 @@ namespace qlm
     // rest function
     void FirstByJoss::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
         random_gen.Reset();
     }

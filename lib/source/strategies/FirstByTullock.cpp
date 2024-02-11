@@ -64,7 +64,7 @@ namespace qlm
     // rest function
     void FirstByTullock::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 

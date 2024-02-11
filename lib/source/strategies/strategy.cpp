@@ -65,7 +65,7 @@ namespace qlm
         return this->probabilistic_action;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    void Strategy::Reset()
+    void Strategy::BaseReset()
     {
         num_coop = 0;
         num_def = 0;

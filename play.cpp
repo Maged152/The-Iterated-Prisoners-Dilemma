@@ -4,13 +4,13 @@
 int main()
 {
     // first strategy
-    qlm::FirstByJoss strategy_0;
+    qlm::TitForTat strategy_0;
 
     // second strategy
-    qlm::TitForTat strategy_1;
+    qlm::FirstByDowning strategy_1;
 
     // match parameters
-    const unsigned int num_rounds = 15;
+    const unsigned int num_rounds = 10;
     const qlm::PayOff pay_off {}; // default pay off
     const int seed = 0; // seed for  probabilistic strategies
 
@@ -19,6 +19,9 @@ int main()
     // print results
     match.Print();
 
+    std::cout << strategy_0.GetMyHistory().size();
+    strategy_0.Reset();
+    std::cout << strategy_0.GetMyHistory().size();
     // save results as csv file
-    match.SaveAsCSV("match_results.csv");
+    //match.SaveAsCSV("match_results.csv");
 }

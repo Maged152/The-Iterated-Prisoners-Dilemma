@@ -47,7 +47,7 @@ namespace qlm
     // rest function
     void FirstByDavis::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 

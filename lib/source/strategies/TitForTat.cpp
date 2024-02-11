@@ -30,7 +30,7 @@ namespace qlm
     // rest function
     void TitForTat::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 

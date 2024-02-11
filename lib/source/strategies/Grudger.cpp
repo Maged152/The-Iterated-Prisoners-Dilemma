@@ -43,7 +43,7 @@ namespace qlm
     // rest function
     void Grudger::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 

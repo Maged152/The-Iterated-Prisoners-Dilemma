@@ -41,7 +41,7 @@ namespace qlm
     // rest function
     void FirstByGrofman::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
         random_gen.Reset();
     }

@@ -103,7 +103,7 @@ namespace qlm
     // rest function
     void FirstByNydegger::Reset()
     {
-        Strategy::Reset();
+        Strategy::BaseReset();
         flags.reset();
     }
 
