@@ -5,7 +5,7 @@ namespace qlm
     // constructor
     FirstByShubik::FirstByShubik(const PayOff& pay_off) : Strategy(pay_off)
     {
-        name = "FirstByShubik";
+        name = "First by Shubik";
         info = "This rule cooperates until the other defects, and then defects once. If the other defects again after the \
                 rule’s cooperation is resumed, the rule defects twice. In general, the length of \
                 retaliation is increased by one for each departure from mutual cooperation. \

@@ -1,6 +1,5 @@
 #include "strategies.hpp"
 #include <cmath>
-#include <iostream>
 
 namespace qlm
 {
@@ -53,11 +52,11 @@ namespace qlm
                 opp_coop_response_to_d++;
             }
 
-            float alpha = opp_coop_response_to_c / (float)(num_coop + 1);
-            float beta = opp_coop_response_to_d /(float)std::max(num_def, 2);
+            double alpha = opp_coop_response_to_c / static_cast<double>(num_coop + 1);
+            double beta = opp_coop_response_to_d / static_cast<double>(std::max(num_def, 2));
 
-            float expected_value_of_cooperating = alpha * pay_off.cooperate_cooperate + (1 - alpha) * pay_off.cooperate_defect;
-            float expected_value_of_defecting = beta * pay_off.defect_cooperate + (1 - beta) * pay_off.defect_defect;
+            double expected_value_of_cooperating = alpha * pay_off.cooperate_cooperate + (1 - alpha) * pay_off.cooperate_defect;
+            double expected_value_of_defecting = beta * pay_off.defect_cooperate + (1 - beta) * pay_off.defect_defect;
 
             if (expected_value_of_cooperating > expected_value_of_defecting)
             {
@@ -71,14 +70,6 @@ namespace qlm
             {
                 action = my_history.back() == Choice::COOPERATE ? Choice::DEFECT : Choice::COOPERATE;
             }
-
-            // std::cout << "opp_coop_response_to_c : " << opp_coop_response_to_c << "\n"
-            //           << "opp_coop_response_to_d : " << opp_coop_response_to_d << "\n"
-            //           << "alpha : " << alpha << "\n"
-            //           << "beta : " << beta << "\n"
-            //           << "expected_value_of_cooperating : " << expected_value_of_cooperating << "\n"
-            //           << "expected_value_of_defecting : " << expected_value_of_defecting << "\n";
-
         }
 
         // update history

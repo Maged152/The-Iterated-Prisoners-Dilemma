@@ -105,13 +105,8 @@ namespace test
                           (token == "D" && player_0_actions[index] == qlm::Choice::DEFECT)))
                     {
                         status = false;
-                        std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " : Failed\n";
-                        std::cout << "py : " << token << " ,pl0 : " << player_0_actions[index] << "\n";
-
-                        // dummy read
-                        std::getline(file, line_actions);
-
-                        continue;
+                        std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " ,round = " << index + 1 << " : Failed\n";
+                        std::cout << "py : " << token << " ,pl_0 : " << player_0_actions[index] << "\n";
                     }
 
                     std::getline(ss_actions, token, sep);
@@ -120,9 +115,8 @@ namespace test
                           (token == "D" && player_1_actions[index] == qlm::Choice::DEFECT)))
                     {
                         status = false;
-                        std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " : Failed\n";
-                        std::cout << "py : " << token << " ,pl1 : " << player_1_actions[index] << "\n";
-                        continue;
+                        std::cout << match.GetPlayer0() << " VS " << match.GetPlayer1() << " ,round = " << index + 1 << " : Failed\n";
+                        std::cout << "py : " << token << " ,pl_1 : " << player_1_actions[index] << "\n";
                     }
 
                     index++;
