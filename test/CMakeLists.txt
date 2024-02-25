@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(pd_test shakhbat_pd_test.cpp)
 
 # Link the library to the test executable
-target_link_libraries(pd_test PUBLIC shakhbat_pd_lib)
+target_link_libraries(pd_test PUBLIC shakhbat_pd)
 
 add_custom_target(run_test
     COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/Axelrod.py
