@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # Define the list of strategies you want to test
     strategy_list = [axl.Cooperator(), axl.TitForTat(), axl.Grudger(), axl.Defector(), axl.FirstByDavis(), axl.FirstByGrofman(),
                      axl.FirstByJoss(), axl.FirstByShubik(), axl.FirstByFeld(), axl.FirstByTullock(), axl.FirstByNydegger(),
-                     axl.FirstByDowning()]
+                     axl.FirstByDowning(), axl.Random()]
     
     # Run matches
     run_matches(strategy_list, 200)
